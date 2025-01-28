@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppService } from './app.service';
+import { AtendimentosModule } from './atendimentos/atendimentos.module';
+
 
 import * as dotenv from 'dotenv';
 dotenv.config();
@@ -18,6 +20,7 @@ dotenv.config();
       entities: [],
       synchronize: false, 
     }),
+    AtendimentosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
